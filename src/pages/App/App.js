@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import Posts from '../../components/Posts/Posts'
-import NavBar from '../../components/NavBar/NavBar'
-import FireHose from '../../components/FireHose/FireHose'
 import './App.css';
+import MainPage from '../MainPage/MainPage';
 
  class App extends Component {
   constructor(){
@@ -13,13 +11,12 @@ import './App.css';
   }
   render(){
     return (
-      <>
+      
       <div className="App">
-      <NavBar />
-        <Posts />
+      <MainPage />
       </div>
-      <FireHose />
-      </>
+      
+      
     )
   }
 }
