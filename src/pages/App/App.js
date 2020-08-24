@@ -6,14 +6,33 @@ import MainPage from '../MainPage/MainPage';
   constructor(){
     super();
     this.state = {
+      posts: [],
+    }
+
+    setNotes() {
 
     }
+
+    handleaddNote(newNote) {
+      setNotes((prevNotes) => {
+        return [...prevNotes, newNote]
+      })
+    }
+
+    handleUpdatePosts = (posts) => {
+      this.setState ({ posts });
+    }
+
   }
+
+  
   render(){
     return (
       
       <div className="App">
-      <MainPage />
+      <MainPage addNote={this.state.addNote} 
+        posts={this.state.posts}
+      />
       </div>
       
       
