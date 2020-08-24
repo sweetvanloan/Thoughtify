@@ -18,7 +18,7 @@ function NavBar() {
 
         {/* below is the sign in/sign up button that we will need to add a tenerary to */}
         <button className="Navbar">
-            <a>About</a>
+            <a>Sign-Up/Sign-In</a>
         </button>
     </div>
 }
