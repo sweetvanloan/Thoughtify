@@ -21,6 +21,15 @@ Sweet Van Loan: Key Github Master
 - MVC
 - README.md
 
+## Visual Products
+
+### Wireframes
+![Wireframe 1 of the main landing page](public/img/wireframe-landing-page.jpg)
+![Wireframe 2, of the user profile and firehose page](public/img/wireframe-userpage.jpg)
+![Wireframe 3, of the individual viewing post page](public/img/wireframe-show-page.jpg)
+
+### Screenshots
+
 
 ### Technologies Used
 
