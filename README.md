@@ -1,3 +1,48 @@
+# Thoughtify
+
+### Introduction
+
+Thoughtify is a social media app that values the mental health well-being of its users. Users can sign up for free and share their journals/articles on an open platform, as well as interact with other users, leave supportive comments, and share in community despite physical restricitons such as quarentine, illness, or schedules. 
+
+### Dev Team
+
+Manuel Fuentes: Key Design Consultant
+- Design/CSS
+- Wireframes
+- Pitch Deck
+
+Ian Chu: Key Database Manager 
+- Models
+- MongoDB
+- Pitch Deck
+
+Sweet Van Loan: Key Github Master 
+- Content (JSX)
+- MVC
+- README.md
+
+
+### Technologies Used
+
+- JavaScript
+- HTML
+- CSS
+- Express
+- Node.js
+- MongoDB
+- React
+
+### Getting Started 
+
+### Unsolved Problems
+
+### Future Enhancements 
+
+
+
+
+### React App & Other Technical Information
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
