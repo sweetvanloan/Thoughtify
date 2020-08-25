@@ -1,41 +1,40 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import MainPage from '../MainPage/MainPage';
 
- class App extends Component {
-  constructor(){
+class App extends Component {
+  constructor() {
     super();
     this.state = {
       posts: [],
     }
 
-    setNotes() {
+    //create a post by pushing to 
+    // setNotes() {
 
-    }
+    // }
 
-    handleaddNote(newNote) {
-      setNotes((prevNotes) => {
-        return [...prevNotes, newNote]
-      })
-    }
+    // handleaddNote(newNote) {
+    //   setNotes((prevNotes) => {
+    //     return [...prevNotes, newNote]
+    //   })
+    // }
 
     handleUpdatePosts = (posts) => {
-      this.setState ({ posts });
+      this.setState({ posts });
     }
 
   }
 
-  
-  render(){
+
+  render() {
     return (
-      
+
       <div className="App">
-      <MainPage addNote={this.state.addNote} 
-        posts={this.state.posts}
-      />
+        <MainPage addNote={this.state.addNote}
+          posts={this.state.posts}
+        />
       </div>
-      
-      
     )
   }
 }

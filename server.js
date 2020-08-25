@@ -15,11 +15,11 @@ app.use(express.json());
 app.use('/api/users', require('./routes/api/users'));
 app.use('/api/posts', require('./routes/api/posts'));
 //asterisk catches all routes
-app.get('/*', function(req, res){
+app.get('/*', function (req, res) {
     res.sendFile(path.join(__dirname, 'build', 'index.html'))
 });
 
 const port = process.env.PORT || 3001;
-app.listen(port, function() {
+app.listen(port, function () {
     console.log(`Express is running on port ${port}`)
 });
