@@ -24,6 +24,7 @@ handleSubmit = async (e) => {
         this.props.handleLogin();
         this.props.history.push('/');
     } catch (err) {
+        console.log("this is from handleSubmit:", err)
         alert("Invalid Credentials!!!")
     }
 }
