@@ -1,4 +1,25 @@
-import React from 'react'
+// import React from 'react'
+
+
+// function CreatePost(props){
+   
+   
+// return <div>
+//     <form>
+//         <input
+//         name="title"
+//         value={}
+//         placeholder="Title"
+//         />
+//         <textarea 
+//          name="content"
+//          value={}   
+//         />
+       
+//     </form>
+// </div>
+    
+// }
 
 function CreatePost(props) {
     function handleChange(e) {
@@ -31,4 +52,4 @@ function CreatePost(props) {
 
 }
 
-export default CreatePost
+// export default CreatePost
