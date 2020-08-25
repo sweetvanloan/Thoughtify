@@ -22,6 +22,7 @@ import LoginPage from '../LoginPage/LoginPage';
     }
 
     handleSignup = () => {
+      console.log()
       this.setState({user: userService.getUser()})
     }
 
@@ -43,10 +44,10 @@ import LoginPage from '../LoginPage/LoginPage';
           ></Route>
           <Route 
             exact path="/signup" render={props => 
-            <SignupPage handleSignup={this.handleSignup}/>
+            <SignupPage handleSignup={this.handleSignup} {...props}/>
           }></Route>
           <Route exact path="/login" render={props => 
-            <LoginPage handleLogin={this.handleLogin} />
+            <LoginPage handleLogin={this.handleLogin} {...props} />
           }>  
           </Route>
         </Switch>
