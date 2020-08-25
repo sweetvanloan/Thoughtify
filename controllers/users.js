@@ -8,6 +8,7 @@ module.exports = {
    login
 };
 
+
 async function signup(req, res){
     const user = new User(req.body);
     try {
@@ -35,6 +36,14 @@ async function login(req, res) {
     } catch (err) {
         return res.status(401).json(err)
     }
+
+function isLoggedIn(req, res) {
+    console.log("isLoggedIn")
+}
+
+function getAllUsers(req, res) {
+    console.log("getAllUsers")
+
 }
 
 function createJWT(user) {

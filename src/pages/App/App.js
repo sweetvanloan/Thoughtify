@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch, Redirect} from 'react-router-dom';
 import userService from '../../utils/userService';
@@ -8,13 +8,15 @@ import MainPage from '../MainPage/MainPage';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 
- class App extends Component {
-  constructor(){
+class App extends Component {
+  constructor() {
     super();
     this.state = {
       posts: [],
       user: userService.getUser()
     }
+
+    
   }
     handleLogout = () => {
       userService.logout();
@@ -53,6 +55,35 @@ import LoginPage from '../LoginPage/LoginPage';
       )
     }
   
+
+    //create a post by pushing to 
+    // setNotes() {
+
+    // }
+
+    // handleaddNote(newNote) {
+    //   setNotes((prevNotes) => {
+    //     return [...prevNotes, newNote]
+    //   })
+    // }
+
+    handleUpdatePosts = (posts) => {
+      this.setState({ posts });
+    }
+
+  }
+
+
+  render() {
+    return (
+
+      <div className="App">
+        <MainPage addNote={this.state.addNote}
+          posts={this.state.posts}
+        />
+      </div>
+    )
+  }
 }
 
 export default App;
