@@ -1,6 +1,7 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 
-function NavBar() {
+function NavBar(props) {
     return <div>
         NavBar
 
@@ -17,9 +18,9 @@ function NavBar() {
         </button>
 
         {/* below is the sign in/sign up button that we will need to add a tenerary to */}
-        <button className="Navbar">
-            <a>Sign-Up/Sign-In</a>
-        </button>
+        <Link className="Navbar" to='' onClick={props.handleLogout}>
+            <a>Sign-Out</a>
+        </Link>
     </div>
 }
 
