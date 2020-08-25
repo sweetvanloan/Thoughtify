@@ -8,35 +8,34 @@ class App extends Component {
     this.state = {
       posts: [],
     }
-
-    create a post by pushing to
-    setNotes() {
-
-    }
-
-    handleaddNote(newNote) {
-      setNotes((prevNotes) => {
-        return [...prevNotes, newNote]
-      })
-    }
-
-    handleUpdatePosts = (posts) => {
-      this.setState({ posts });
-    }
-
   }
 
+
+  handleaddNote(newNote) {
+    setNotes((prevNotes) => {
+      return [...prevNotes, newNote]
+    })
+  }
+
+  handleUpdatePosts = (posts) => {
+    this.setState({ posts });
+  }
 
   render() {
     return (
 
       <div className="App">
-        <MainPage addNote={this.state.addNote}
+        <MainPage
+          addNote={this.state.addNote}
           posts={this.state.posts}
         />
       </div>
     )
   }
 }
+
+
+
+
 
 export default App;
