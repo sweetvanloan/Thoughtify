@@ -9,16 +9,16 @@ class App extends Component {
       posts: [],
     }
 
-    //create a post by pushing to 
-    // setNotes() {
+    create a post by pushing to
+    setNotes() {
 
-    // }
+    }
 
-    // handleaddNote(newNote) {
-    //   setNotes((prevNotes) => {
-    //     return [...prevNotes, newNote]
-    //   })
-    // }
+    handleaddNote(newNote) {
+      setNotes((prevNotes) => {
+        return [...prevNotes, newNote]
+      })
+    }
 
     handleUpdatePosts = (posts) => {
       this.setState({ posts });
