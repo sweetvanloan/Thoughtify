@@ -1,5 +1,4 @@
 import React from 'react';
-
 import CreatePost from '../CreatePost/CreatePost';
 import Post from '../Post/Post';
 
@@ -17,4 +16,5 @@ function FireHose(props) {
         </>
     )
 }
+
 export default FireHose

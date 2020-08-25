@@ -7,23 +7,24 @@ import {Route, Link} from 'react-router-dom';
 
 
 class MainPage extends Component {
-    
-    async componentDidMount(){
+
+    async componentDidMount() {
         const posts = await postsService.index();
         this.props.handleUpdatePosts(posts);
     }
 
-        render(props){
-            return (<>
-            <div>yooooooooo</div>
-            {/* <NavBar />
-            <PersonalView /> */}
-            <FireHose posts={props.posts} />
 
-             </>
-            )
-        }
-   
+
+    render(props) {
+        return (
+         <>
+           <div>yooooooooo</div>
+            <NavBar handleLogout={props.handleLogout} />
+            <PersonalView />
+            <FireHose posts={props.posts} />
+        </>
+          )
+    }
 }
 
 export default MainPage

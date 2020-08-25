@@ -1,5 +1,9 @@
 const Post = require('../models/post');
 const mongoose = require("mongoose");
+
+
+// const { default: Post } = require("../src/components/Post/Post");
+
 module.exports = {
     index, //show
     create: createPost, //create 
