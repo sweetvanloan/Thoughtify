@@ -1,25 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import { Route, Switch, Redirect} from 'react-router-dom';
-import userService from '../../utils/userService';
-
-import LandingPage from '../LandingPage/LandingPage';
 import MainPage from '../MainPage/MainPage';
-import SignupPage from '../SignupPage/SignupPage';
-import LoginPage from '../LoginPage/LoginPage';
 
- class App extends Component {
-  constructor(){
+class App extends Component {
+  constructor() {
     super();
     this.state = {
       posts: [],
-      user: userService.getUser()
     }
   }
-    handleLogout = () => {
-      userService.logout();
-      this.setState({user: null});
-    }
 
     handleSignup = () => {
       console.log()
@@ -55,5 +44,9 @@ import LoginPage from '../LoginPage/LoginPage';
     }
   
 }
+
+
+
+
 
 export default App;

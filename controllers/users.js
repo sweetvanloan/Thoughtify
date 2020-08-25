@@ -4,8 +4,8 @@ const jwt = require('jsonwebtoken');
 const SECRET = process.env.SECRET;
 
 module.exports = {
-   signup,
-   login
+    signup,
+    login
 };
 
 async function signup(req, res){
@@ -31,7 +31,7 @@ async function login(req, res) {
             console.log("this is from login:",  err)
             if(isMatch){
                 const token = createJWT(user);
-                res.json({token})
+                res.json({ token })
             } else {
                 return res.status(401).json({err: "bad credentials-bad password"});
             }
@@ -42,14 +42,22 @@ async function login(req, res) {
             err: "something went wrong"
         })
     }
+
+    function isLoggedIn(req, res) {
+        console.log("isLoggedIn")
+    }
+
+    function getAllUsers(req, res) {
+        console.log("getAllUsers")
+
+    }
+
+    function createJWT(user) {
+        return jwt.sign(
+            { user },
+            SECRET,
+            { expiresIn: "24h" }
+        );
+    }
+
 }
-
-function createJWT(user) {
-    return jwt.sign(
-        {user}, 
-        SECRET,
-        {expiresIn: "24h"}
-    );
-}
-
-
