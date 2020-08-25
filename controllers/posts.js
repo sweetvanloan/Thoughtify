@@ -1,7 +1,6 @@
-
 const mongoose = require("mongoose");
-const { default: Post } = require("../src/components/Post/Post");
-const Schema = mongoose.Schema;
+
+
 
 module.exports = {
     index, //show

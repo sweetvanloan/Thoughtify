@@ -14,9 +14,9 @@ class MainPage extends Component {
 
         render(props){
             return <>
-            <NavBar handleLogout={props.handleLogout}/>
+            <NavBar />
             <PersonalView />
-            <FireHose  posts={props.posts}/>
+            <FireHose  />
 
              </>
         }

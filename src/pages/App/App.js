@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import './App.css';
+import {Switch, Route, Redirect} from 'react-router-dom';
 import MainPage from '../MainPage/MainPage';
+import LandingPage from '../LandingPage/LandingPage';
+import SignupPage from '../SignupPage/SignupPage';
+import LoginPage from '../LoginPage/LoginPage';
 
+import userService from '../../utils/userService';
 class App extends Component {
   constructor() {
     super();
