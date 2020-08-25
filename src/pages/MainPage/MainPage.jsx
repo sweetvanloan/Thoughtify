@@ -6,21 +6,21 @@ import postsService from '../../utils/postsService';
 
 
 class MainPage extends Component {
-    
-    async componentDidMount(){
+
+    async componentDidMount() {
         const posts = await postsService.index();
         this.props.handleUpdatePosts(posts);
     }
 
-        render(props){
-            return <>
-            <NavBar handleLogout={props.handleLogout}/>
+    render(props) {
+        return <>
+            <NavBar handleLogout={props.handleLogout} />
             <PersonalView />
-            <FireHose  posts={props.posts}/>
+            <FireHose />
 
-             </>
-        }
-   
+        </>
+    }
+
 }
 
 export default MainPage
