@@ -3,11 +3,11 @@ import React from 'react';
 import styles from './Post.module.css'
 
 
-function Posts (props) {
-    return <div className={styles.Posts}>
+function Post (props) {
+    return <div className={styles.Post}>
     Posts
    
     </div>
 }
 
-export default Posts
+export default Post

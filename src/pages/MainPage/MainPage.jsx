@@ -12,6 +12,7 @@ class MainPage extends Component {
         this.props.handleUpdatePosts(posts);
     }
 
+
     render(props) {
         return <>
             <NavBar handleLogout={props.handleLogout} />
@@ -20,6 +21,7 @@ class MainPage extends Component {
 
         </>
     }
+
 
 }
 
