@@ -1,5 +1,6 @@
-const mongoose = require("mongoose");
 
+const mongoose = require("mongoose");
+const { default: Post } = require("../src/components/Post/Post");
 
 
 module.exports = {
