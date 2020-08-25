@@ -3,6 +3,7 @@ import FireHose from '../../components/FireHose/FireHose';
 import PersonalView from '../../components/PersonalView/PersonalView'
 import NavBar from '../../components/NavBar/NavBar'
 import postsService from '../../utils/postsService';
+import {Route, Link} from 'react-router-dom';
 
 
 class MainPage extends Component {
@@ -13,16 +14,17 @@ class MainPage extends Component {
     }
 
 
+
     render(props) {
-        return <>
+        return (
+         <>
+           <div>yooooooooo</div>
             <NavBar handleLogout={props.handleLogout} />
             <PersonalView />
-            <FireHose />
-
+            <FireHose posts={props.posts} />
         </>
+          )
     }
-
-
 }
 
 export default MainPage
