@@ -32,7 +32,7 @@ class App extends Component {
           <Route 
             exact path="/main" render={props => (
               userService.getUser() ? 
-              <MainPage handleLogout={this.handleLogout}/> 
+              <MainPage posts={this.state.posts} handleLogout={this.handleLogout}/> 
               : <Redirect to='/login'/>
             )}
           ></Route>

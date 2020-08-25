@@ -20,9 +20,8 @@ handleSubmit = async (e) => {
     e.preventDefault();
     try {
         await userService.login(this.state);
-
         this.props.handleLogin();
-        this.props.history.push('/');
+        this.props.history.push('/main');
     } catch (err) {
         console.log("this is from handleSubmit:", err)
         alert("Invalid Credentials!!!")
