@@ -16,59 +16,54 @@ class App extends Component {
       posts: []
     }
   }
-
   handleSignup = () => {
-
-    
     this.setState({ user: userService.getUser() })
   }
   handleLogout = () => {
     userService.logout();
     this.setState({user: null})
   }
-    handleLogin = () => {
-      this.setState({user: userService.getUser()})
-    }
-
-    handleUpdatePosts = (posts) => {
-      this.setState({posts})
-    }
-    // handleLogout = () => {
-    //   userService.logout();
-    //   this.setState({user: null});
-    // }
-
-    
-    render() {
-      return (
-        <Switch>
-          <Route exact path="/" render={props => 
-            <LandingPage />}>
-          </Route>
-          <Route 
-            exact path="/main" render={props => (
-              userService.getUser()
-              ? <MainPage 
-                  posts={this.state.posts} 
-                  handleLogout={this.handleLogout}
-                  handleUpdatePosts={this.handleUpdatePosts}
-                /> 
-              : <Redirect to='/login'/>
-
-            )}
-          ></Route>
-          <Route 
-            exact path="/signup" render={props => 
-            <SignupPage handleSignup={this.handleSignup} {...props}/>
-          }></Route>
-        <Route exact path="/login" render={props =>
-          <LoginPage handleLogin={this.handleLogin} {...props} />
-        }>
+  handleLogin = () => {
+    this.setState({user: userService.getUser()})
+  }
+  handleUpdatePosts = (posts) => {
+    this.setState({posts})
+  }
+  handlePost = (post) => {
+    this.setState({
+      post
+    })
+  }
+  render() {
+    return (
+      <Switch>
+        <Route exact path="/" render={props => 
+          <LandingPage />}>
         </Route>
-      </Switch>
+        <Route 
+          exact path="/main" render={props => (
+            userService.getUser()
+            ? <MainPage 
+                posts={this.state.posts} 
+                handleLogout={this.handleLogout}
+                handleUpdatePosts={this.handleUpdatePosts}
+                handlePost={this.handlePost}
+              /> 
+            : <Redirect to='/login'/>
+
+          )}
+        ></Route>
+        <Route 
+          exact path="/signup" render={props => 
+          <SignupPage handleSignup={this.handleSignup} {...props}/>
+        }></Route>
+      <Route exact path="/login" render={props =>
+        <LoginPage handleLogin={this.handleLogin} {...props} />
+      }>
+      </Route>
+    </Switch>
     )
   }
-
 }
 
 
