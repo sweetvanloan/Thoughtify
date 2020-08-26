@@ -10,18 +10,19 @@ class MainPage extends Component {
 
     async componentDidMount() {
         const posts = await postsService.index();
-        this.props.handleUpdatePosts(posts);
+       this.props.handleUpdatePosts(posts);
     }
 
+    
 
-
-    render(props) {
+    render() {
+       
         return (
          <>
-           <div>yooooooooo</div>
-            <NavBar handleLogout={props.handleLogout} />
+           <div>main Page</div>
+            <NavBar handleLogout={this.props.handleLogout} />
             <PersonalView />
-            <FireHose posts={props.posts} />
+            {/* <FireHose posts={this.props.posts}  /> */}
         </>
           )
     }

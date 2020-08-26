@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 function NavBar(props) {
+    console.log("NavBar: ", props)
     return <div>
         NavBar
 

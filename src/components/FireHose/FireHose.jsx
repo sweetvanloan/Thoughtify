@@ -4,15 +4,16 @@ import Post from '../Post/Post';
 
 
 function FireHose(props) {
+    // console.log("firehouse", props)
     return (
         <>
-        <div>ayooooo(firehose)</div>
-        <CreatePost />
-        {props.posts.map((post, idx) => 
+        <div>firehose</div>
+        <CreatePost  />
+        {/* {props.posts.map((post, idx) => 
             <div key={idx}>
                 <Post title={post.title}/>
             </div>
-        )}
+        )} */}
         </>
     )
 }
