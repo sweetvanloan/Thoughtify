@@ -18,23 +18,27 @@ class App extends Component {
   }
 
   handleSignup = () => {
+
     
     this.setState({ user: userService.getUser() })
   }
-
+  handleLogout = () => {
+    userService.logout();
+    this.setState({user: null})
+  }
     handleLogin = () => {
       this.setState({user: userService.getUser()})
     }
 
     handleUpdatePosts = (posts) => {
-      this.setState({posts: postsService.index})
+      this.setState({posts})
     }
+    // handleLogout = () => {
+    //   userService.logout();
+    //   this.setState({user: null});
+    // }
 
-    handleLogout = () => {
-      userService.logout()
-      this.setState({user: null})
-    }
-
+    
     render() {
       return (
         <Switch>
@@ -43,15 +47,14 @@ class App extends Component {
           </Route>
           <Route 
             exact path="/main" render={props => (
-              userService.getUser() ? 
-                <MainPage 
-                  {...props}
+              userService.getUser()
+              ? <MainPage 
                   posts={this.state.posts} 
-                  handleUpdatePosts={this.handleUpdatePosts}
                   handleLogout={this.handleLogout}
-                    
-                  /> 
-                : <Redirect to='/login'/>
+                  handleUpdatePosts={this.handleUpdatePosts}
+                /> 
+              : <Redirect to='/login'/>
+
             )}
           ></Route>
           <Route 

@@ -1,13 +1,10 @@
 import React from 'react';
-
 import styles from './Post.module.css'
-
-
 function Post (props) {
-    return <div className={styles.Post}>
-    Posts
-   
-    </div>
+    return (
+        <div>
+            <h4>{props.title}</h4>
+        </div>
+    )
 }
-
 export default Post;

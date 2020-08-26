@@ -5,7 +5,8 @@ function PersonalView(props){
 
     return (
        <div>
-           Personal view
+        <h1>Personal View</h1>
+
        </div>
     )
 }

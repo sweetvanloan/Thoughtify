@@ -19,10 +19,10 @@ class MainPage extends Component {
        
         return (
          <>
-           <div>main Page</div>
+           <h1>Thoughtify</h1>
             <NavBar handleLogout={this.props.handleLogout} />
             <PersonalView />
-            {/* <FireHose posts={this.props.posts}  /> */}
+            <FireHose posts={this.props.posts} />
         </>
           )
     }
