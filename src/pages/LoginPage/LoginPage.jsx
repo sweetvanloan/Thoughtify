@@ -18,6 +18,7 @@ handleChange =(e) => {
 
 handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(this.state)
     try {
         await userService.login(this.state);
         this.props.handleLogin();
@@ -35,12 +36,26 @@ handleSubmit = async (e) => {
                     <form className="form-horizontal" onSubmit={this.handleSubmit} >
                       <div className="form-group">
                         <div className="col-sm-12">
-                          <input type="text" className="form-control" placeholder="Username" value={this.state.username} name="username" onChange={this.handleChange} />
+                          <input type="text" 
+                          className="form-control" 
+                          placeholder="Username" 
+                          value={this.state.username} 
+                          name="username" 
+                          onChange={this.handleChange} 
+                            
+                          />
                         </div>
                       </div>
                       <div className="form-group">
                         <div className="col-sm-12">
-                          <input type="password" className="form-control" placeholder="Password" value={this.state.pw} name="password" onChange={this.handleChange} />
+                          <input type="password" 
+                          className="form-control" 
+                          placeholder="Password" 
+                          value={this.state.password} 
+                          name="password" 
+                          onChange={this.handleChange} 
+
+                          />
                         </div>
                       </div>
                       <div className="form-group">

@@ -3,26 +3,38 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import MainPage from '../MainPage/MainPage';
 import LandingPage from '../LandingPage/LandingPage';
-import SignupPage from '../SignupPage/SignUpPage';
+import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 
 import userService from '../../utils/userService';
+import postsService from '../../utils/postsService';
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      posts: [],
+      posts: []
     }
   }
 
   handleSignup = () => {
-    console.log()
+    
     this.setState({ user: userService.getUser() })
   }
 
     handleLogin = () => {
       this.setState({user: userService.getUser()})
     }
+
+    handleUpdatePosts = (posts) => {
+      this.setState({posts: postsService.index})
+    }
+
+    handleLogout = () => {
+      userService.logout()
+      this.setState({user: null})
+    }
+
     render() {
       return (
         <Switch>
@@ -32,8 +44,14 @@ class App extends Component {
           <Route 
             exact path="/main" render={props => (
               userService.getUser() ? 
-              <MainPage posts={this.state.posts} handleLogout={this.handleLogout}/> 
-              : <Redirect to='/login'/>
+                <MainPage 
+                  {...props}
+                  posts={this.state.posts} 
+                  handleUpdatePosts={this.handleUpdatePosts}
+                  handleLogout={this.handleLogout}
+                    
+                  /> 
+                : <Redirect to='/login'/>
             )}
           ></Route>
           <Route 
