@@ -3,10 +3,11 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import MainPage from '../MainPage/MainPage';
 import LandingPage from '../LandingPage/LandingPage';
-import SignupPage from '../SignupPage/SignUpPage';
+import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 
 import userService from '../../utils/userService';
+import postsService from '../../utils/postsService';
 class App extends Component {
   constructor() {
     super();
@@ -16,13 +17,22 @@ class App extends Component {
   }
 
   handleSignup = () => {
-    console.log()
     this.setState({ user: userService.getUser() })
   }
-
+  handleLogout = () => {
+    userService.logout();
+    this.setState({user: null})
+  }
     handleLogin = () => {
       this.setState({user: userService.getUser()})
     }
+    handleUpdatePosts = (posts) => {
+      this.setState({posts})
+    }
+    // handleLogout = () => {
+    //   userService.logout();
+    //   this.setState({user: null});
+    // }
     render() {
       return (
         <Switch>
@@ -31,8 +41,12 @@ class App extends Component {
           </Route>
           <Route 
             exact path="/main" render={props => (
-              userService.getUser() ? 
-              <MainPage posts={this.state.posts} handleLogout={this.handleLogout}/> 
+              userService.getUser()
+              ? <MainPage 
+                  posts={this.state.posts} 
+                  handleLogout={this.handleLogout}
+                  handleUpdatePosts={this.handleUpdatePosts}
+                /> 
               : <Redirect to='/login'/>
             )}
           ></Route>

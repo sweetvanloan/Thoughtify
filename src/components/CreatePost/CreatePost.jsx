@@ -16,11 +16,24 @@ class CreatePost extends Component{
     }
     render() {
         return(
+            <>
+            <h3>create a post</h3>
             <form onSubmit={this.handleSubmit}>
-                <input onChange={this.handleChange} type="text" name='title' placeholder='name your post'/>
-                <input onChange={this.handleChange} type="text" name='body' placeholder="What's on your mind? How do you feel?"/>
-                <input type="submit">submit</input>
+                <input 
+                    onChange={this.handleChange} 
+                    type="text" 
+                    name='title' 
+                    placeholder='name your post'
+                />
+                <input 
+                    onChange={this.handleChange} 
+                    type="text" 
+                    name='body' 
+                    placeholder="What's on your mind? How do you feel?"
+                />
+                <button>add post</button>
             </form>
+            </>
         )
     }
 }

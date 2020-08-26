@@ -18,10 +18,10 @@ class MainPage extends Component {
     render(props) {
         return (
          <>
-           <div>yooooooooo</div>
-            <NavBar handleLogout={props.handleLogout} />
+           <h1>Thoughtify</h1>
+            <NavBar handleLogout={this.props.handleLogout} />
             <PersonalView />
-            <FireHose posts={props.posts} />
+            <FireHose posts={this.props.posts} />
         </>
           )
     }

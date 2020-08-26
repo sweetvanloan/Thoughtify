@@ -5,15 +5,17 @@ import Post from '../Post/Post';
 
 function FireHose(props) {
     return (
-        <>
-        <div>ayooooo(firehose)</div>
-        <CreatePost />
+        <div>
+        <h1>Firehose view</h1>
         {props.posts.map((post, idx) => 
             <div key={idx}>
-                <Post title={post.title}/>
+                <Post 
+                    title={post.title}
+                />
             </div>
         )}
-        </>
+        <CreatePost />
+        </div>
     )
 }
 
