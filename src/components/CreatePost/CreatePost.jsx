@@ -11,7 +11,7 @@ class CreatePost extends Component{
         })
     }
     handleSubmit = async (e) => {
-        e.preventDefault();
+        e.preventDefault(); console.log("yoo this is handleSubmit")
         await postsService.create(this.state);
     }
     render() {
@@ -19,6 +19,7 @@ class CreatePost extends Component{
             <>
             <h3>create a post</h3>
             <form onSubmit={this.handleSubmit}>
+
                 <input 
                     onChange={this.handleChange} 
                     type="text" 
@@ -32,6 +33,7 @@ class CreatePost extends Component{
                     placeholder="What's on your mind? How do you feel?"
                 />
                 <button>add post</button>
+
             </form>
             </>
         )

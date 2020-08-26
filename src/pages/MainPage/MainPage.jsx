@@ -10,12 +10,13 @@ class MainPage extends Component {
 
     async componentDidMount() {
         const posts = await postsService.index();
-        this.props.handleUpdatePosts(posts);
+       this.props.handleUpdatePosts(posts);
     }
 
+    
 
-
-    render(props) {
+    render() {
+       
         return (
          <>
            <h1>Thoughtify</h1>

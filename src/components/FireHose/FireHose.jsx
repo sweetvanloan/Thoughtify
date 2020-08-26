@@ -4,6 +4,7 @@ import Post from '../Post/Post';
 
 
 function FireHose(props) {
+    // console.log("firehouse", props)
     return (
         <div>
         <h1>Firehose view</h1>

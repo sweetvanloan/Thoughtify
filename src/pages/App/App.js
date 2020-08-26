@@ -8,15 +8,18 @@ import LoginPage from '../LoginPage/LoginPage';
 
 import userService from '../../utils/userService';
 import postsService from '../../utils/postsService';
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      posts: [],
+      posts: []
     }
   }
 
   handleSignup = () => {
+
+    
     this.setState({ user: userService.getUser() })
   }
   handleLogout = () => {
@@ -26,6 +29,7 @@ class App extends Component {
     handleLogin = () => {
       this.setState({user: userService.getUser()})
     }
+
     handleUpdatePosts = (posts) => {
       this.setState({posts})
     }
@@ -33,6 +37,8 @@ class App extends Component {
     //   userService.logout();
     //   this.setState({user: null});
     // }
+
+    
     render() {
       return (
         <Switch>
@@ -48,6 +54,7 @@ class App extends Component {
                   handleUpdatePosts={this.handleUpdatePosts}
                 /> 
               : <Redirect to='/login'/>
+
             )}
           ></Route>
           <Route 

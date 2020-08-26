@@ -6,6 +6,7 @@ function PersonalView(props){
     return (
        <div>
         <h1>Personal View</h1>
+
        </div>
     )
 }
