@@ -32,8 +32,9 @@ class App extends Component {
     this.setState({ posts })
   }
   handlePost = (post) => {
+    console.log("APP HANDLEPOST: ", post)
     this.setState({
-      post
+      post: post,
     })
   }
   render() {
@@ -55,11 +56,18 @@ class App extends Component {
 
           )}
         ></Route>
-        <Route path="/post/:id" render={props =>
-          <ShowPage
-            handlePost={this.handlePost
-            } />
-        }> </Route>
+
+        <Route
+          exact path="/posts/:id" render={props => (
+            userService.getUser()
+              ? <ShowPage
+                posts={this.state.posts}
+                handlePost={this.handlePost}
+                {...props}
+              />
+              : <Redirect to='/login' />
+          )}> </Route>
+
         <Route
           exact path="/signup" render={props =>
             <SignupPage handleSignup={this.handleSignup} {...props} />
