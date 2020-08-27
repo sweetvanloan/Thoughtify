@@ -21,9 +21,20 @@ function show(post) {
     body: JSON.stringify(post)
   }).then(res => res.json());
 }
+function update(post, stackIdentifier) {
+  let actualBody = JSON.stringify(post);
+  console.log({stackIdentifier});
+  return fetch(BASE_URL + `posts/${stackIdentifier}`, {
+    method: 'POST',
+    headers: new Headers({ 'Content-Type': 'application/json' }),
+    body: JSON.stringify(post)
+    // body: actualBody.slice(-1).concat(`stackIdentifier: ${stackIdentifier} }`)
+  })
+}
 
 export default {
   index,
   create,
-  show
+  show,
+  update
 };

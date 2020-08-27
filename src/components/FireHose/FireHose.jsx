@@ -11,8 +11,10 @@ function FireHose(props) {
                 <div key={idx}>
                     <Post
                         title={post.title}
+
                         handlePost={props.post}
                         post={post}
+
                     />
                 </div>
             )}
