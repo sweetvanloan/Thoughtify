@@ -7,6 +7,7 @@ const postsCtrl = require('../../controllers/posts');
 router.use(require('../../config/auth'));
 router.get('/posts', postsCtrl.index);
 router.post('/posts', postsCtrl.create);
+router.get('/posts/:id', postsCtrl.show);
 // use checkAuth to Post or Routes
 
 function checkAuth(req, res, next) {
