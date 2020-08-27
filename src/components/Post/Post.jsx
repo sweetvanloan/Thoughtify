@@ -10,14 +10,19 @@ function Post(props) {
     console.log("PROPS POST in POST", props.post)
     console.log("PROPS in POST", props)
     return (
-        <div>
-            <h4>{props.title}</h4>
-            <Link to={
+
+        
+            <div className={styles.Post}>
+                <div className={styles.card}>
+                    <h4>{props.title}</h4>
+                  <Link to={
                 `/posts/${props.idx}`
             }>
                 <button>See Post</button>
             </Link>
-        </div>
+                </div>
+            </div>
+      
     )
 }
 export default Post;
