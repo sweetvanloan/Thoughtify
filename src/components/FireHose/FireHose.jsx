@@ -6,17 +6,18 @@ import styles from './FireHose.module.css'
 function FireHose(props) {
     // console.log("firehouse", props)
     return (
+       
         <div className={styles.hoseview}>
-        
-
-        {props.posts.map((post, idx) => 
-            <div key={idx}>
-                <Post 
-                    title={post.title}
-                />
-            </div>
-        )}
-        <CreatePost />
+            <h1>Firehose view</h1>
+            {props.posts.map((post, idx) =>
+                <div key={idx}>
+                    <Post
+                        title={post.title}
+                        idx={post._id}
+                    />
+                </div>
+            )}
+            <CreatePost />
         </div>
     )
 }
