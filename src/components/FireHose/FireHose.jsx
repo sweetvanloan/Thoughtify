@@ -1,6 +1,7 @@
 import React from 'react';
 import CreatePost from '../CreatePost/CreatePost';
 import Post from '../Post/Post';
+import { Link } from "react-router-dom"
 
 
 function FireHose(props) {
@@ -12,7 +13,8 @@ function FireHose(props) {
                 <div key={idx}>
                     <Post
                         title={post.title}
-                        idx={post._id}
+                        handlePost={props.post}
+                        post={post}
                     />
                 </div>
             )}
