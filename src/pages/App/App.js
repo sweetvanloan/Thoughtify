@@ -5,17 +5,19 @@ import MainPage from '../MainPage/MainPage';
 import LandingPage from '../LandingPage/LandingPage';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
-
-import userService from '../../utils/userService';
-import postsService from '../../utils/postsService';
+import EditPage from '../EditPage/EditPage';
 import ShowPage from '../ShowPage/ShowPage';
+import userService from '../../utils/userService';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       posts: [],
-      post: {}
+      post: {
+        title: '', 
+        body: '', 
+        id: ''}
     }
   }
   handleSignup = () => {
@@ -31,10 +33,9 @@ class App extends Component {
   handleUpdatePosts = (posts) => {
     this.setState({ posts })
   }
-  handlePost = (post) => {
-    console.log("APP HANDLEPOST: ", post)
+  handlePost = (posts) => {
     this.setState({
-      post: post,
+      post: posts._id,
     })
   }
   render() {
@@ -47,38 +48,34 @@ class App extends Component {
           exact path="/main" render={props => (
             userService.getUser()
               ? <MainPage
-                posts={this.state.posts}
-                handleLogout={this.handleLogout}
-                handleUpdatePosts={this.handleUpdatePosts}
-                handlePost={this.handlePost}
+                  posts={this.state.posts}
+                  handleLogout={this.handleLogout}
+                  handleUpdatePosts={this.handleUpdatePosts}
+                  handlePost={this.handlePost}
               />
               : <Redirect to='/login' />
-
           )}
-        ></Route>
-
-        {/* <Route
-          exact path="/posts/:id" render={props => (
-            userService.getUser()
-              ? <ShowPage
-                posts={this.state.posts}
-                handlePost={this.handlePost}
-                {...props}
-              />
-              : <Redirect to='/login' />
-          )}> </Route> */}
-
-        {/* <Route
-          path="/posts/:id" component={ShowPage} ></Route> */}
-
+        >
+        </Route>
+        {/* Note: Please keep the EditPage route above the ShowPage route so long as the ShowPage route does not have an exact path */}
         <Route
-          path="/posts/:id" render={() => (
+          exact path="/posts/:id/edit" render={(props) => (
+            <EditPage
+              posts={this.state.posts}
+              post={this.state.post}
+              {...props}
+            />
+        )}>
+        </Route>
+        <Route
+          path="/posts/:id" render={(props) => (
             <ShowPage
               posts={this.state.posts}
-              handlePost={this.handlePost}
+              post={this.state.post}
+              {...props}
             />
-          )}></Route>
-
+        )}>
+        </Route>
         <Route
           exact path="/signup" render={props =>
             <SignupPage handleSignup={this.handleSignup} {...props} />
@@ -91,6 +88,4 @@ class App extends Component {
     )
   }
 }
-
-
 export default App;

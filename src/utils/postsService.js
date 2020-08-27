@@ -14,21 +14,32 @@ function create(post) {
   }).then(res => res.json());
 }
 
-function show(post) {
-  return fetch(BASE_URL + 'post/:id', {
-    method: 'GET',
-    headers: new Headers({ 'Content-Type': 'application/json' }),
-    body: JSON.stringify(post)
-  }).then(res => res.json());
-}
-function show(post) {
+// function show(post) {
+//   return fetch(BASE_URL + 'post/:id', {
+//     method: 'GET',
+//     headers: new Headers({ 'Content-Type': 'application/json' }),
+//     body: JSON.stringify(post)
+//   }).then(res => res.json());
+// }
+function show() {
   return fetch(BASE_URL + 'posts/:id', {
     method: 'GET',
-    headers: new Headers({'Content-Type': 'application/json'})
+    headers: new Headers({ 'Content-Type': 'application/json' })
   }).then(res => res.json());
+}
+function update(post, stackIdentifier) {
+  let actualBody = JSON.stringify(post);
+  console.log({stackIdentifier});
+  return fetch(BASE_URL + `posts/${stackIdentifier}`, {
+    method: 'POST',
+    headers: new Headers({ 'Content-Type': 'application/json' }),
+    body: JSON.stringify(post)
+    // body: actualBody.slice(-1).concat(`stackIdentifier: ${stackIdentifier} }`)
+  })
 }
 export default {
   index,
   create,
-  show
+  show,
+  update
 };

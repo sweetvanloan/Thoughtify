@@ -1,34 +1,20 @@
 import React, { Component } from 'react';
-// import { useParams } from 'react-router-dom';
 import postsService from '../../utils/postsService';
 
 class ShowPage extends Component {
 
     constructor(props) {
         super(props);
-        console.log("PROPS in SHOW0: ", this.props);
-        console.log("Post in SHOW0: ", this.props.posts);
-        console.log("Post in SHOW0: ", this.props);
-        this.props.posts.handlePost(props);
-
     }
-
     async componentDidMount() {
-        // const { id } = await useParams();
         const post = await postsService.show();
         this.props.handleUpdatePosts(post);
-        console.log("PROPS in SHOWPAGE 1= ", this.props);
-        // this.props.handlePost(this.props)
-        console.log("PROPS in SHOWPAGE = ", this.props.title);
     }
-
-
     render() {
-        return ( // {props.posts.findById((post, idx) => ....
+        return (
             <div key={this.props.idx}>
-                <h2>POST</h2>
-                <h1>{this.props.idx.title}</h1>
-                <p>{this.props.idx.body}</p>
+                <h1>{this.props.location.state.post.title}</h1>
+                <p>{this.props.location.state.post.body}</p>
             </div>
         )
     }
