@@ -3,11 +3,11 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import MainPage from '../MainPage/MainPage';
 import LandingPage from '../LandingPage/LandingPage';
-import SignupPage from '../SignupPage/SignupPage';
+import SignupPage from '../SignupPage/SignUpPage';
 import LoginPage from '../LoginPage/LoginPage';
 import EditPage from '../EditPage/EditPage';
-import ShowPage from '../ShowPage/ShowPage';
 import userService from '../../utils/userService';
+import ShowPage from '../ShowPage/ShowPage';
 
 class App extends Component {
   constructor() {
@@ -15,9 +15,11 @@ class App extends Component {
     this.state = {
       posts: [],
       post: {
-        title: '', 
-        body: '', 
-        id: ''}
+
+        title: "",
+        body: "",
+        id: ""
+      },
     }
   }
   handleSignup = () => {
@@ -33,11 +35,15 @@ class App extends Component {
   handleUpdatePosts = (posts) => {
     this.setState({ posts })
   }
+
   handlePost = (posts) => {
     this.setState({
-      post: posts._id,
+      post: posts._id
+
     })
+
   }
+
   render() {
     return (
       <Switch>
@@ -55,6 +61,7 @@ class App extends Component {
               />
               : <Redirect to='/login' />
           )}
+
         >
         </Route>
         {/* Note: Please keep the EditPage route above the ShowPage route so long as the ShowPage route does not have an exact path */}
@@ -67,10 +74,12 @@ class App extends Component {
             />
         )}>
         </Route>
+
         <Route
-          path="/posts/:id" render={(props) => (
+          exact path="/posts/:id" render={(props) => (
             <ShowPage
               posts={this.state.posts}
+              handlePost={this.handlePost}
               post={this.state.post}
               {...props}
             />

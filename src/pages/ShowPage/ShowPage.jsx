@@ -9,35 +9,24 @@ class ShowPage extends Component {
     async componentDidMount() {
         const post = await postsService.show();
         this.props.handleUpdatePosts(post);
+
+        this.props.handlePost(this.props)
     }
+
     render() {
         return (
             <div key={this.props.idx}>
                 <h1>{this.props.location.state.post.title}</h1>
                 <p>{this.props.location.state.post.body}</p>
+                <br />
+                <a href="/">
+                    <button>Return Home</button>
+                </a>
+                <a href="/main">
+                    <button>Return to Main</button>
+                </a>
             </div>
         )
     }
 }
 export default ShowPage;
-
-
-
-
-
-
-// function ShowPage(props) {
-
-
-//     console.log("PROPS in SHOWPAGE = ", props.title);
-//     const { id } = useParams();
-
-//     return (
-//         <div>
-//             <h1>POST</h1>
-//             <h1>{props.idx.title}</h1>
-//             <p>{props.idx.body}</p>
-//         </div>
-//     )
-// }
-// export default ShowPage;

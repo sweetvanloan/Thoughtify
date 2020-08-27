@@ -14,17 +14,11 @@ function create(post) {
   }).then(res => res.json());
 }
 
-// function show(post) {
-//   return fetch(BASE_URL + 'post/:id', {
-//     method: 'GET',
-//     headers: new Headers({ 'Content-Type': 'application/json' }),
-//     body: JSON.stringify(post)
-//   }).then(res => res.json());
-// }
-function show() {
-  return fetch(BASE_URL + 'posts/:id', {
+function show(post) {
+  return fetch(BASE_URL + 'post/:id', {
     method: 'GET',
-    headers: new Headers({ 'Content-Type': 'application/json' })
+    headers: new Headers({ 'Content-Type': 'application/json' }),
+    body: JSON.stringify(post)
   }).then(res => res.json());
 }
 function update(post, stackIdentifier) {
@@ -37,6 +31,7 @@ function update(post, stackIdentifier) {
     // body: actualBody.slice(-1).concat(`stackIdentifier: ${stackIdentifier} }`)
   })
 }
+
 export default {
   index,
   create,

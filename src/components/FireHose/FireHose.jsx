@@ -4,7 +4,6 @@ import Post from '../Post/Post';
 
 
 function FireHose(props) {
-    // console.log("firehouse", props)
     return (
         <div>
             <h1>Firehose view</h1>
@@ -12,8 +11,10 @@ function FireHose(props) {
                 <div key={idx}>
                     <Post
                         title={post.title}
-                        post={post}
+
                         handlePost={props.post}
+                        post={post}
+
                     />
                 </div>
             )}
