@@ -57,7 +57,7 @@ class App extends Component {
           )}
         ></Route>
 
-        <Route
+        {/* <Route
           exact path="/posts/:id" render={props => (
             userService.getUser()
               ? <ShowPage
@@ -66,7 +66,18 @@ class App extends Component {
                 {...props}
               />
               : <Redirect to='/login' />
-          )}> </Route>
+          )}> </Route> */}
+
+        {/* <Route
+          path="/posts/:id" component={ShowPage} ></Route> */}
+
+        <Route
+          path="/posts/:id" render={() => (
+            <ShowPage
+              posts={this.state.posts}
+              handlePost={this.handlePost}
+            />
+          )}></Route>
 
         <Route
           exact path="/signup" render={props =>

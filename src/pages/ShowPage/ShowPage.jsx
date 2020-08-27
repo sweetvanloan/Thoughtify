@@ -6,8 +6,10 @@ class ShowPage extends Component {
 
     constructor(props) {
         super(props);
-        console.log("PROPS in SHOW0: ", props)
-        this.state.post.handlePost(this.props)
+        console.log("PROPS in SHOW0: ", this.props);
+        console.log("Post in SHOW0: ", this.props.posts);
+        console.log("Post in SHOW0: ", this.props);
+        this.props.posts.handlePost(props);
 
     }
 
@@ -15,7 +17,7 @@ class ShowPage extends Component {
         // const { id } = await useParams();
         const post = await postsService.show();
         this.props.handleUpdatePosts(post);
-        console.log("PROPS in SHOWPAGE 1= ", this.props)
+        console.log("PROPS in SHOWPAGE 1= ", this.props);
         // this.props.handlePost(this.props)
         console.log("PROPS in SHOWPAGE = ", this.props.title);
     }
