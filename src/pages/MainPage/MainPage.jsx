@@ -3,7 +3,7 @@ import FireHose from '../../components/FireHose/FireHose';
 import PersonalView from '../../components/PersonalView/PersonalView'
 import NavBar from '../../components/NavBar/NavBar'
 import postsService from '../../utils/postsService';
-import { Route, Link } from 'react-router-dom';
+
 
 
 class MainPage extends Component {

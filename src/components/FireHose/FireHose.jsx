@@ -1,11 +1,9 @@
 import React from 'react';
 import CreatePost from '../CreatePost/CreatePost';
 import Post from '../Post/Post';
-import { Link } from "react-router-dom"
 
 
 function FireHose(props) {
-    // console.log("firehouse", props)
     return (
         <div>
             <h1>Firehose view</h1>

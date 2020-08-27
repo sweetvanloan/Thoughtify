@@ -7,7 +7,6 @@ import SignupPage from '../SignupPage/SignUpPage';
 import LoginPage from '../LoginPage/LoginPage';
 
 import userService from '../../utils/userService';
-import postsService from '../../utils/postsService';
 import ShowPage from '../ShowPage/ShowPage';
 
 class App extends Component {

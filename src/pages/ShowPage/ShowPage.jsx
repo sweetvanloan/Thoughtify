@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-// import { useParams } from 'react-router-dom';
 import postsService from '../../utils/postsService';
 
 class ShowPage extends Component {
@@ -12,18 +11,21 @@ class ShowPage extends Component {
     async componentDidMount() {
         const post = await postsService.show();
         this.props.handleUpdatePosts(post);
-        console.log("PROPS in SHOWPAGE 1= ", this.props);
         this.props.handlePost(this.props)
-        console.log("PROPS in SHOWPAGE = ", this.props.title);
     }
-
 
     render() {
         return (
             <div>
-                <h2>POST</h2>
                 <h1>{this.props.location.state.post.title}</h1>
                 <p>{this.props.location.state.post.body}</p>
+                <br />
+                <a href="/">
+                    <button>Return Home</button>
+                </a>
+                <a href="/main">
+                    <button>Return to Main</button>
+                </a>
             </div>
         )
     }
