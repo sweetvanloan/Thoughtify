@@ -1,13 +1,14 @@
 import React from 'react';
 import CreatePost from '../CreatePost/CreatePost';
 import Post from '../Post/Post';
-
+import styles from './FireHose.module.css'
 
 function FireHose(props) {
     // console.log("firehouse", props)
     return (
-        <div>
-        <h1>Firehose view</h1>
+        <div className={styles.hoseview}>
+        
+
         {props.posts.map((post, idx) => 
             <div key={idx}>
                 <Post 

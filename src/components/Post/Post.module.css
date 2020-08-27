@@ -6,12 +6,16 @@
   flex-flow: column nowrap;
   align-items: left;
   margin-bottom: 10px;
-  
+  justify-content: center;
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   width: 40%;
+  background-color: orange;
+  color: white;
+  border-radius: 5px;
+  
 }
 

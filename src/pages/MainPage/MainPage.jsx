@@ -4,7 +4,7 @@ import PersonalView from '../../components/PersonalView/PersonalView'
 import NavBar from '../../components/NavBar/NavBar'
 import postsService from '../../utils/postsService';
 import {Route, Link} from 'react-router-dom';
-
+import styles from './MainPage.module.css'
 
 class MainPage extends Component {
 
@@ -18,12 +18,15 @@ class MainPage extends Component {
     render() {
        
         return (
-         <>
-           <h1>Thoughtify</h1>
-            <NavBar handleLogout={this.props.handleLogout} />
-            <PersonalView />
-            <FireHose posts={this.props.posts} />
-        </>
+         <div className={styles.container}>
+                <h1 >Thoughtify</h1>
+                <NavBar  className={styles.NavBar} handleLogout={this.props.handleLogout} />
+                <div className={styles.PersonalView}><PersonalView posts={this.props.posts}/> 
+                </div>
+                <div>
+                <FireHose className={styles.FireHose} posts={this.props.posts} />
+                </div>
+        </div>
           )
     }
 }
