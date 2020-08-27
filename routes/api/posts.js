@@ -9,6 +9,7 @@ router.get('/posts/:id', postsCtrl.show);
 router.get('/posts', postsCtrl.index);
 router.post('/posts', postsCtrl.create);
 router.get('/posts/:id', postsCtrl.show);
+router.post('/posts/:id', postsCtrl.update);
 // use checkAuth to Post or Routes
 
 function checkAuth(req, res, next) {

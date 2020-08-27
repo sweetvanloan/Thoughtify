@@ -5,18 +5,17 @@ class ShowPage extends Component {
 
     constructor(props) {
         super(props);
-        console.log("Props in showpage:", props)
     }
-
     async componentDidMount() {
         const post = await postsService.show();
         this.props.handleUpdatePosts(post);
+
         this.props.handlePost(this.props)
     }
 
     render() {
         return (
-            <div>
+            <div key={this.props.idx}>
                 <h1>{this.props.location.state.post.title}</h1>
                 <p>{this.props.location.state.post.body}</p>
                 <br />
