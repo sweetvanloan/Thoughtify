@@ -4,7 +4,6 @@ import Post from '../Post/Post';
 import styles from './FireHose.module.css'
 
 function FireHose(props) {
-    // console.log("firehouse", props)
     return (
        
         <div className={styles.hoseview}>
@@ -13,7 +12,10 @@ function FireHose(props) {
                 <div key={idx}>
                     <Post
                         title={post.title}
-                        idx={post._id}
+
+                        handlePost={props.post}
+                        post={post}
+
                     />
                 </div>
             )}
