@@ -30,12 +30,23 @@ Sweet Van Loan: Key Github Master
 ![Wireframe 3, of the individual viewing post page](public/img/wireframe-show-page.jpg)
 
 ### Screenshots
-![Landing Page Screenshot](public/img/landingpage.jpg)
-![Main Page](public/img/main.png)
-![Menu View](public/img/menu.png)
-![Post View](public/img/postExample.png)
+Landing Page
+![Landing Page Screenshot](https://imgur.com/eUQVCa3.jpg)
+
+Main Page
+![Main Page](https://imgur.com/AvOhCB7.jpg)
+
+Menu View
+![Menu View](https://imgur.com/ogbt8zT.jpg)
+
+Post View
+![Post View](https://imgur.com/tSxlNsD.jpg)
+
+Edit View
 ![Edit View ](https://imgur.com/JQYiPnx.jpg)
-![Tweet View](public/img/tweet.png)
+
+Tweet View
+![Tweet View](https://imgur.com/9HGWcGk.jpg)
 
 
 ### Technologies Used
