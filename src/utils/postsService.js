@@ -13,7 +13,6 @@ function create(post) {
     body: JSON.stringify(post)
   }).then(res => res.json());
 }
-
 function show(post) {
   return fetch(BASE_URL + 'posts/:id', {
     method: 'GET',
@@ -28,13 +27,19 @@ function update(post, stackIdentifier) {
     method: 'POST',
     headers: new Headers({ 'Content-Type': 'application/json' }),
     body: JSON.stringify(post)
-    // body: actualBody.slice(-1).concat(`stackIdentifier: ${stackIdentifier} }`)
   })
 }
-
+function deletePost(stackIdentifier) {
+  console.log({stackIdentifier});
+  return fetch(BASE_URL + `posts/${stackIdentifier}`, {
+    method: 'DELETE',
+    headers: new Headers({ 'Content-Type': 'application/json' })
+  })
+}
 export default {
   index,
   create,
   show,
-  update
+  update,
+  delete: deletePost
 };

@@ -13,7 +13,7 @@ class EditPage extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         await postsService.update(this.state, this.props.location.state.post._id);
-        this.props.history.push('/main')
+        this.props.history.push('/main');
     }
     render() {
         return(

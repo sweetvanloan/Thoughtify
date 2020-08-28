@@ -3,20 +3,18 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import MainPage from '../MainPage/MainPage';
 import LandingPage from '../LandingPage/LandingPage';
-import SignupPage from '../SignupPage/SignupPage';
+import SignupPage from '../SignupPage/SignUpPage';
 import LoginPage from '../LoginPage/LoginPage';
 import EditPage from '../EditPage/EditPage';
-import userService from '../../utils/userService';
 import ShowPage from '../ShowPage/ShowPage';
-// import post from '../../../models/post';
-
+import DeletePage from '../DeletePage/DeletePage';
+import userService from '../../utils/userService';
 class App extends Component {
   constructor() {
     super();
     this.state = {
       posts: [],
       post: {
-
         title: "",
         body: "",
         id: ""
@@ -36,17 +34,13 @@ class App extends Component {
   handleUpdatePosts = (posts) => {
     this.setState({ posts })
   }
-
   handlePost = (posts) => {
     this.setState({
       post: {
         id: posts._id
       }
-
     })
-
   }
-
   render() {
     return (
       <Switch>
@@ -61,11 +55,10 @@ class App extends Component {
                   handleLogout={this.handleLogout}
                   handleUpdatePosts={this.handleUpdatePosts}
                   handlePost={this.handlePost}
+                  // handleDelete={this.handleDelete}
               />
               : <Redirect to='/login' />
-          )}
-
-        >
+          )}>
         </Route>
         {/* Note: Please keep the EditPage route above the ShowPage route so long as the ShowPage route does not have an exact path */}
         <Route
@@ -77,7 +70,14 @@ class App extends Component {
             />
         )}>
         </Route>
-
+        <Route 
+          exact path="/posts/:id/delete" render={(props) => (
+            <DeletePage 
+              post={this.state.post}
+              {...props}
+            />
+        )}>
+        </Route>
         <Route
           exact path="/posts/:id" render={(props) => (
             <ShowPage
