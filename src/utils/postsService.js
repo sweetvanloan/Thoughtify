@@ -15,7 +15,7 @@ function create(post) {
 }
 
 function show(post) {
-  return fetch(BASE_URL + 'post/:id', {
+  return fetch(BASE_URL + 'posts/:id', {
     method: 'GET',
     headers: new Headers({ 'Content-Type': 'application/json' }),
     body: JSON.stringify(post)

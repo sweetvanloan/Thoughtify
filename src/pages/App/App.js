@@ -8,6 +8,7 @@ import LoginPage from '../LoginPage/LoginPage';
 import EditPage from '../EditPage/EditPage';
 import userService from '../../utils/userService';
 import ShowPage from '../ShowPage/ShowPage';
+// import post from '../../../models/post';
 
 class App extends Component {
   constructor() {
@@ -38,7 +39,9 @@ class App extends Component {
 
   handlePost = (posts) => {
     this.setState({
-      post: posts._id
+      post: {
+        id: posts._id
+      }
 
     })
 

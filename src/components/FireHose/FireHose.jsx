@@ -5,7 +5,6 @@ import styles from './FireHose.module.css'
 
 function FireHose(props) {
     return (
-       
         <div className={styles.hoseview}>
             <h1>Firehose view</h1>
             {props.posts.map((post, idx) =>
