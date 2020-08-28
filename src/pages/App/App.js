@@ -3,7 +3,7 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import MainPage from '../MainPage/MainPage';
 import LandingPage from '../LandingPage/LandingPage';
-import SignupPage from '../SignupPage/SignUpPage';
+import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import EditPage from '../EditPage/EditPage';
 import ShowPage from '../ShowPage/ShowPage';
@@ -51,11 +51,11 @@ class App extends Component {
           exact path="/main" render={props => (
             userService.getUser()
               ? <MainPage
-                  posts={this.state.posts}
-                  handleLogout={this.handleLogout}
-                  handleUpdatePosts={this.handleUpdatePosts}
-                  handlePost={this.handlePost}
-                  // handleDelete={this.handleDelete}
+                posts={this.state.posts}
+                handleLogout={this.handleLogout}
+                handleUpdatePosts={this.handleUpdatePosts}
+                handlePost={this.handlePost}
+              // handleDelete={this.handleDelete}
               />
               : <Redirect to='/login' />
           )}>
@@ -68,15 +68,15 @@ class App extends Component {
               post={this.state.post}
               {...props}
             />
-        )}>
+          )}>
         </Route>
-        <Route 
+        <Route
           exact path="/posts/:id/delete" render={(props) => (
-            <DeletePage 
+            <DeletePage
               post={this.state.post}
               {...props}
             />
-        )}>
+          )}>
         </Route>
         <Route
           exact path="/posts/:id" render={(props) => (
@@ -86,7 +86,7 @@ class App extends Component {
               post={this.state.post}
               {...props}
             />
-        )}>
+          )}>
         </Route>
         <Route
           exact path="/signup" render={props =>

@@ -21,7 +21,8 @@ Sweet Van Loan: Key Github Master
 - MVC
 - README.md
 
-## Visual Products
+
+
 
 ### Wireframes
 ![Wireframe 1 of the main landing page](public/img/wireframe-landing-page.jpg)
@@ -29,6 +30,12 @@ Sweet Van Loan: Key Github Master
 ![Wireframe 3, of the individual viewing post page](public/img/wireframe-show-page.jpg)
 
 ### Screenshots
+![Wireframe 1 of the main landing page](public/img/landingpage.jpg)
+![Wireframe 1 of the main landing page](public/img/main.png)
+![Wireframe 1 of the main landing page](public/img/menu.png)
+![Wireframe 1 of the main landing page](public/img/postExample.png)
+![Wireframe 1 of the main landing page](public/img/edit.png)
+![Wireframe 1 of the main landing page](public/img/tweet.png)
 
 
 ### Technologies Used
@@ -43,9 +50,36 @@ Sweet Van Loan: Key Github Master
 
 ### Getting Started 
 
+First, sign in on to [Thoughtify](https://thoughtify-by-team-c.herokuapp.com/)
+
+From there, user will view both the "personal view" holding all the user's posts, and the "firehose view" which will hold all the public posts on the app. User will have the option to create a post, edit a post, or delete a post based on authentication. These posts are meant to be creative and shared.
+
 ### Unsolved Problems
 
+- Redirects from various links, including edit and create
+- Routing 
+- Facebook share link
+- functionality of buttons
+
+### User Stories 
+
+- AAU I would like to sign up for the App.
+- AAU I would like to sign in and sign out of the App.
+- AAU I would like to create a post.
+- AAU I would like to edit my post.
+- AAU I would like to delete my post.
+- AAU I would like to view other posts.
+- AAU I would like to view my own posts.
+
 ### Future Enhancements 
+
+- Profile pic upload or avatar creator
+- Confirmation of deletion
+- Flexibility in view 
+- Share to Facebook
+- Google Authentication
+- Share by full post link in social media
+
 
 
 
