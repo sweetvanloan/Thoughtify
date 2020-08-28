@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import postsService from '../../utils/postsService'
 import Fab from "@material-ui/core/Fab";
-import styles from './CreatePost.module.css'
 import AddIcon from '@material-ui/icons/Add'
+import styles from './CreatePost.module.css'
 
 class CreatePost extends Component{
     state={
@@ -17,13 +17,14 @@ class CreatePost extends Component{
     handleSubmit = async (e) => {
         e.preventDefault(); console.log("yoo this is handleSubmit")
         await postsService.create(this.state);
+        this.props.history.push('/main');
     }
     render() {
         return(
             <div className={styles.card}>
             {/* <h3>create a post</h3> */}
-            <form className={styles.create}
-            onSubmit={this.handleSubmit}>
+            <form onSubmit={this.handleSubmit} className={styles.create}
+            >
                 <input 
                     onChange={this.handleChange} 
                     type="text" 
@@ -36,9 +37,10 @@ class CreatePost extends Component{
                     name='body' 
                     placeholder="What's on your mind? How do you feel?"
                 />
-               <Fab onSubmit={this.handleSubmit}>
+                <button>+</button>
+               {/* <Fab>
                    <AddIcon />
-               </Fab>
+               </Fab> */}
             </form>
             </div>
         )
