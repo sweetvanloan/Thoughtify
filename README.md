@@ -20,6 +20,7 @@ Sweet Van Loan: Key Github Master
 - Content (JSX)
 - MVC
 - README.md
+- Social Media 
 
 
 
