@@ -34,7 +34,7 @@ Sweet Van Loan: Key Github Master
 ![Main Page](public/img/main.png)
 ![Menu View](public/img/menu.png)
 ![Post View](public/img/postExample.png)
-![Edit View ](public/img/edit.png)
+![Edit View ](https://imgur.com/JQYiPnx.jpg)
 ![Tweet View](public/img/tweet.png)
 
 
