@@ -5,10 +5,10 @@ import './SignupPage.css';
 class SignupPage extends Component {
     constructor(props) {
         super(props);
-        this.state = {message: ''}
+        this.state = { message: '' }
     }
     updateMessage = (msg) => {
-        this.setState({message: msg});
+        this.setState({ message: msg });
     }
     render(props) {
         return (

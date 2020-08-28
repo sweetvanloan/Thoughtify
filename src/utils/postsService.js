@@ -15,7 +15,7 @@ function create(post) {
 }
 
 function show(post) {
-  return fetch(BASE_URL + 'post/:id', {
+  return fetch(BASE_URL + 'posts/:id', {
     method: 'GET',
     headers: new Headers({ 'Content-Type': 'application/json' }),
     body: JSON.stringify(post)
@@ -23,7 +23,7 @@ function show(post) {
 }
 function update(post, stackIdentifier) {
   let actualBody = JSON.stringify(post);
-  console.log({stackIdentifier});
+  console.log({ stackIdentifier });
   return fetch(BASE_URL + `posts/${stackIdentifier}`, {
     method: 'POST',
     headers: new Headers({ 'Content-Type': 'application/json' }),

@@ -3,11 +3,12 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import MainPage from '../MainPage/MainPage';
 import LandingPage from '../LandingPage/LandingPage';
-import SignupPage from '../SignupPage/SignUpPage';
+import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import EditPage from '../EditPage/EditPage';
 import userService from '../../utils/userService';
 import ShowPage from '../ShowPage/ShowPage';
+// import post from '../../../models/post';
 
 class App extends Component {
   constructor() {
@@ -38,7 +39,9 @@ class App extends Component {
 
   handlePost = (posts) => {
     this.setState({
-      post: posts._id
+      post: {
+        id: posts._id
+      }
 
     })
 
@@ -54,10 +57,10 @@ class App extends Component {
           exact path="/main" render={props => (
             userService.getUser()
               ? <MainPage
-                  posts={this.state.posts}
-                  handleLogout={this.handleLogout}
-                  handleUpdatePosts={this.handleUpdatePosts}
-                  handlePost={this.handlePost}
+                posts={this.state.posts}
+                handleLogout={this.handleLogout}
+                handleUpdatePosts={this.handleUpdatePosts}
+                handlePost={this.handlePost}
               />
               : <Redirect to='/login' />
           )}
@@ -72,18 +75,18 @@ class App extends Component {
               post={this.state.post}
               {...props}
             />
-        )}>
+          )}>
         </Route>
 
         <Route
-          exact path="/posts/:id" render={(props) => (
+          path="/posts/:id" render={(props) => (
             <ShowPage
               posts={this.state.posts}
               handlePost={this.handlePost}
               post={this.state.post}
               {...props}
             />
-        )}>
+          )}>
         </Route>
         <Route
           exact path="/signup" render={props =>
