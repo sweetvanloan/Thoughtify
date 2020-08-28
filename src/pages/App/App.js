@@ -3,9 +3,9 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import MainPage from '../MainPage/MainPage';
 import LandingPage from '../LandingPage/LandingPage';
-import SignupPage from '../SignupPage/SignUpPage';
+import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
-
+import EditPage from '../EditPage/EditPage';
 import userService from '../../utils/userService';
 import ShowPage from '../ShowPage/ShowPage';
 
@@ -15,6 +15,7 @@ class App extends Component {
     this.state = {
       posts: [],
       post: {
+
         title: "",
         body: "",
         id: ""
@@ -35,11 +36,10 @@ class App extends Component {
     this.setState({ posts })
   }
 
-
   handlePost = (posts) => {
-    console.log("APP HANDLEPOST: ", posts)
     this.setState({
       post: posts._id
+
     })
 
   }
@@ -54,28 +54,37 @@ class App extends Component {
           exact path="/main" render={props => (
             userService.getUser()
               ? <MainPage
-                posts={this.state.posts}
-                handleLogout={this.handleLogout}
-                handleUpdatePosts={this.handleUpdatePosts}
-                handlePost={this.handlePost}
+                  posts={this.state.posts}
+                  handleLogout={this.handleLogout}
+                  handleUpdatePosts={this.handleUpdatePosts}
+                  handlePost={this.handlePost}
               />
               : <Redirect to='/login' />
-
           )}
-        ></Route>
 
-
+        >
+        </Route>
+        {/* Note: Please keep the EditPage route above the ShowPage route so long as the ShowPage route does not have an exact path */}
+        <Route
+          exact path="/posts/:id/edit" render={(props) => (
+            <EditPage
+              posts={this.state.posts}
+              post={this.state.post}
+              {...props}
+            />
+        )}>
+        </Route>
 
         <Route
-          path="/posts/:id" render={(props) => (
+          exact path="/posts/:id" render={(props) => (
             <ShowPage
               posts={this.state.posts}
               handlePost={this.handlePost}
               post={this.state.post}
               {...props}
             />
-          )}></Route>
-
+        )}>
+        </Route>
         <Route
           exact path="/signup" render={props =>
             <SignupPage handleSignup={this.handleSignup} {...props} />
@@ -88,6 +97,4 @@ class App extends Component {
     )
   }
 }
-
-
 export default App;
