@@ -3,7 +3,7 @@
     grid-template-areas: 
     "header" "NavBar"
     "PersonalView" "FireHose" 
-    "PersonalView" "FireHose" 
+     
     ;
     grid-template-columns: 30% 70%;
     grid-template-rows: 10% 90%;
@@ -19,7 +19,9 @@
 
 .PersonalView {
     background-color: #d9e6f2;
-    
-    
     overflow-y: scroll;
+}
+
+.NavBar {
+
 }

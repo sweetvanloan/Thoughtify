@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
 import postsService from '../../utils/postsService';
+import styles from './EditPage.module.css'
+import EditIcon from '@material-ui/icons/Edit';
+import Fab from "@material-ui/core/Fab";
+
 class EditPage extends Component {
     state ={
         title: '',
@@ -17,26 +21,31 @@ class EditPage extends Component {
     }
     render() {
         return(
-            <>
-            <h3>edit your post</h3>
-            <form
-                onSubmit={this.handleSubmit}
-            >
-                <input 
-                    onChange={this.handleChange} 
-                    type="text" 
-                    name='title' 
-                    placeholder={'title'}
-                />
-                <input 
-                    onChange={this.handleChange} 
-                    type="text" 
-                    name='body' 
-                    placeholder={'body'}
-                />
-                <button>update post</button>
-            </form>
-            </>
+            <div className={styles.EditPage}> 
+                <div className={styles.edit}>
+                    <p>Edit</p>
+                    <form className={styles.form}
+                        onSubmit={this.handleSubmit}
+                    >
+                        <input 
+                            onChange={this.handleChange} 
+                            type="text" 
+                            name='title' 
+                            placeholder={'Title'}
+                        />
+                        <textarea
+                            onChange={this.handleChange} 
+                            type="text" 
+                            name='body' 
+                            placeholder={'Content'}
+                        />
+                        {/* <button>update post</button> */}
+                        <Fab>
+                            <EditIcon />
+                        </Fab>
+                    </form>
+                </div>
+            </div>
         )
     }
 }   

@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import postsService from '../../utils/postsService';
+import styles from './ShowPage.module.css'
+import { Fab } from '@material-ui/core';
+import HomeIcon from '@material-ui/icons/Home';
+import BackspaceIcon from '@material-ui/icons/Backspace';
 
 class ShowPage extends Component {
 
@@ -15,16 +19,24 @@ class ShowPage extends Component {
 
     render() {
         return (
-            <div key={this.props.idx}>
-                <h1>{this.props.location.state.post.title}</h1>
-                <p>{this.props.location.state.post.body}</p>
-                <br />
-                <a href="/">
-                    <button>Return Home</button>
-                </a>
-                <a href="/main">
-                    <button>Return to Main</button>
-                </a>
+            <div className={styles.flex}>
+                <div className={styles.ShowPage}
+                    key={this.props.idx}>
+                        <h3>{this.props.location.state.post.title}</h3>
+                        <p>{this.props.location.state.post.body}</p>
+                        <br />
+                        {/* <a href="/"> */}
+                        <Fab>
+                        <a href="/"> <HomeIcon /></a>
+                        </Fab>
+                        
+                        {/* </a> */}
+                        {/* <a href="/main"> */}
+                        <Fab>
+                        <a href="/main"><BackspaceIcon /></a>
+                        </Fab>
+                        
+                </div>
             </div>
         )
     }
